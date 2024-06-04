@@ -40,8 +40,6 @@ def Volume_from_Radius(radius: float) -> float:
 
     return round(V[0],2)
 
-Volume_from_Radius(2)
-
 class TestVolume_from_Radius(unittest.TestCase):
     def runTest(self):
         V1 = Volume_from_Radius(2)
