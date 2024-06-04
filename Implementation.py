@@ -23,6 +23,7 @@ def Plot(radius: float):
     axis.set_xlabel('Y')
     axis.set_xlabel('Z')
     print('in')
+    
     plt.show()
     
 
@@ -38,6 +39,8 @@ def Volume_from_Radius(radius: float) -> float:
     
     Plot(radius)
 
+    V = integrate.tplquad(f, 0, 2*np.pi, 0, np.pi, 0, radius)
+
     return round(V[0],2)
 
 class TestVolume_from_Radius(unittest.TestCase):
@@ -52,10 +55,3 @@ class TestVolume_from_Radius(unittest.TestCase):
         self.assertEqual(V_Wrong, 0, "Cannot Calculate Radius < 0")
 
 unittest.main()
-
-
-
- 
-# run the test
-unittest.main()
-
